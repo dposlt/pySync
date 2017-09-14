@@ -1,0 +1,5 @@
+background: #140757;
+    background: -moz-linear-gradient(left, #140757 0%,#140757 20%, #ed1c24 80%, #ed1c24 100%);
+    background: -webkit-linear-gradient(left, #140757 0%,#140757 20%, #ed1c24 80%, #ed1c24 100%); 
+    background: linear-gradient(to right, #140757 0%,#140757 20%, #ed1c24 80%, #ed1c24 100%); 
+    background-color: #ed1c24;  

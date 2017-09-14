@@ -1,0 +1,45 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import os
+#from app import logger
+class Backup:
+
+    def ifFileExists(nameFile):
+        if os.path.isfile(nameFile):
+            return True
+        
+    def ifDirExists(*fdir):
+# toto je blbe koukas do adresaru jestli je neco vevnitr, ale neoverujes jestli existuji adresare
+        for dirs in fdir: 
+                if os.ifdirexists(dirs):
+                    print(dirs)
+        '''                    
+            print(os.listdir(dirs))
+
+        count = len(fdir)
+        while(count > 0):
+            for folder in fdir:
+                print(folder)
+                if os.path.isdir(folder):
+                    return True
+                    count -=1
+                else:
+                    print('y')
+                    count -=1
+    '''
+        
+    def bckpFile(source, desc):
+        if Backup.ifDirExistst(source,desc):
+            for name in os.listdir(source):
+                filename = source+'\\'+name
+                if Backup.ifFileExists(filename):
+                    print(name)
+                else:
+                    print(filename, 'is not a file')
+        else:
+            print(source, 'is not a real DIR')
+        
+
+
+                    
