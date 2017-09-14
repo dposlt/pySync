@@ -1,8 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-emailGroup = 'MONEYCZITSeDESBA@moneta.cz'
-developEmail = 'david.poslt@moneta.cz'
+emailGroup = 'groupsEmail'
+developEmail = 'david.poslt@gmail.com'
+fromEmail = 'PySync@pysyncy.com'
 
 # Import smtplib for the actual sending function
 import smtplib, os
@@ -20,7 +21,7 @@ with open(ROOT_DIR, encoding = 'UTF-8') as tstMsg:
 # me == the sender's email address
 # you == the recipient's email address
 msg['Subject'] = 'Microsites fail'
-msg['From'] = 'microsites@moneta.cz'
+msg['From'] = fromEmail
 msg['To'] = developEmail
 
 # Send the message via our own SMTP server.
