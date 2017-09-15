@@ -4,7 +4,7 @@
 import logging, main, os
 from datetime import datetime
 
-class Loger():
+class Loger:
 
     def logger():
         logging.basicConfig(filename='config.log', level=logging.INFO)
