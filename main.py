@@ -25,5 +25,7 @@ __status__ = "Develop"
 
 import app.emails as send
 
-showEmails = send.Email( 'groupsEmail','david.poslt@gmail.com','PySync@pysync.com' )
-print( 'group: {groups} , to: {to} , from: {fromM} '.format( groups = showEmails.groupEmail, to = showEmails.developEmail, fromM = showEmails.fromEmail )  )
+sendM = send.Email( 'Fail', 'david.poslt@moneta.cz','PySync@pysync.com','Došlo k chybě' )
+sendM.sendEmail()
+
+# 'subject: {subject} , to: {to} , from: {fromM}, message: {message} '.format( subject = showEmails.subject, to = showEmails.developEmail, fromM = showEmails.fromEmail, message = showEmails.message )
