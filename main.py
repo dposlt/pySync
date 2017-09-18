@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 __author__ = "David Poslt"
-__license__ = "Moneta Money Bank a.s."
+__license__ = "David Poslt"
 __version__ = "1.0.1"
-__email__ = "david.poslt@moneta.cz"
+__email__ = "david.poslt@gmail.com"
 __status__ = "Develop"
 
 
@@ -25,7 +25,5 @@ __status__ = "Develop"
 
 import app.emails as send
 
-sendM = send.Email( 'Fail', 'david.poslt@moneta.cz','PySync@pysync.com','Došlo k chybě' )
+sendM = send.Email( 'Microsites sync', 'to','from','Došlo k chybě' )
 sendM.sendEmail()
-
-# 'subject: {subject} , to: {to} , from: {fromM}, message: {message} '.format( subject = showEmails.subject, to = showEmails.developEmail, fromM = showEmails.fromEmail, message = showEmails.message )

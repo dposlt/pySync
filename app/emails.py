@@ -4,6 +4,7 @@
 
 import smtplib
 from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 class Email:
 
@@ -18,11 +19,26 @@ class Email:
 			from email.mime.text import MIMEText
 			s = smtplib.SMTP( 'smtp-relay.lb.mbid.cz' )
 
-			msg = MIMEText( self.message )
-			#msg = self.message
+			msg = MIMEMultipart('alternative')
+			
+			
 			msg[ 'Subject' ] = self.subject
 			msg[ 'From' ] = self.fromEmail
 			msg[ 'To' ] = self.developEmail
-			s.send_message(msg)
+
+			html = """
+				<html>
+				<head></head>
+				<body>
+					<table style="background-color: #ff0000;">
+					<tr bgcolor="red"><td>Na tento email neodpovídejte, je generován automaticky</td></tr>
+					<tr bgcolor="yellow"><td><b> """ + self.message + """</b></td></tr>
+					</table>
+				</body>
+				</html>
+				"""
+			msgHtml = MIMEText( html, 'html' )
+			msg.attach( msgHtml )
+			s.sendmail( self.developEmail,self.fromEmail, msg.as_string() )
 			s.quit()
 
