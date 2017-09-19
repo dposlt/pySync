@@ -31,14 +31,15 @@ class Email:
 				<head></head>
 				<body>
 					<table style="background-color: #ff0000;">
-					<tr bgcolor="red"><td>Na tento email neodpovídejte, je generován automaticky</td></tr>
-					<tr bgcolor="yellow"><td><b> """ + self.message + """</b></td></tr>
+					<tr bgcolor="red"><td><center>Na tento email neodpovídejte, je generován automaticky</center></td></tr>
+					<tr bgcolor="yellow"><td><b><center> """ + self.message + """</center></b></td></tr>
 					</table>
 				</body>
 				</html>
 				"""
 			msgHtml = MIMEText( html, 'html' )
 			msg.attach( msgHtml )
-			s.sendmail( self.developEmail,self.fromEmail, msg.as_string() )
+			#s.sendmail( self.developEmail,self.fromEmail, msg.as_string() )
+			s.send_message(msg)
 			s.quit()
 

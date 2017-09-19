@@ -24,6 +24,11 @@ __status__ = "Develop"
 # #zaloha.Backup.ifDirExists('zipdataa','archive')
 
 import app.emails as send
+import configparser
 
-sendM = send.Email( 'Microsites sync', 'to','from','Došlo k chybě' )
+config = configparser.ConfigParser()
+config.read( 'app/config.ini' )
+
+
+sendM = send.Email( 'Microsites sync', config['emails']['toAddress'][1:-1] , config['emails']['fromAddress'][1:-1] ,'Při přenosu dat na microsites server došlo k chybě, kontaktujte administrátora' )
 sendM.sendEmail()
