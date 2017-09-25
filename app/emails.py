@@ -8,7 +8,7 @@ from email.mime.multipart import MIMEMultipart
 
 class Email:
 
-		def __init__( self, subject, developEmail, fromEmail, message ):
+		def __init__( self, title, subject, developEmail, fromEmail, message ):
 			self.subject = subject
 			self.developEmail = developEmail
 			self.fromEmail = fromEmail
@@ -31,7 +31,7 @@ class Email:
 				<head></head>
 				<body>
 					<table style="background-color: #ff0000;">
-					<tr bgcolor="red"><td><center>Na tento email neodpovídejte, je generován automaticky</center></td></tr>
+					<tr bgcolor="red"><td><center>""" + self.title + """</center></td></tr>
 					<tr bgcolor="yellow"><td><b><center> """ + self.message + """</center></b></td></tr>
 					</table>
 				</body>
