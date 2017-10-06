@@ -8,27 +8,31 @@ __email__ = "david.poslt@gmail.com"
 __status__ = "Develop"
 
 
-# #from logging import Loger
-# import app.unziper as Zipper
-#
-# import os
-# #Zipper.Zipper.unzip(os.getcwd() + '\\zipdata',os.getcwd())
-# #Zipper.Zipper.unzip('zipdata','exctract')
-# # def do_log():
-# #     logging.info('start logging for microsites_copy')
-#
-# # writeLog.logger()
-# import app.bckp as zaloha
-#
-# #zaloha.Backup.bckpFile('zipdata','archivea')
-# #zaloha.Backup.ifDirExists('zipdataa','archive')
+### Testovaci procesy ###
 
-import app.emails as send
 import configparser
-
 config = configparser.ConfigParser()
 config.read( 'app/config.ini' )
 
 
-sendM = send.Email( 'Microsites sync', config['emails']['toAddress'][1:-1] , config['emails']['fromAddress'][1:-1] ,'Při přenosu dat na microsites server došlo k chybě, kontaktujte administrátora' )
-sendM.sendEmail()
+## backup ##
+
+# import app.bckp as bckp
+
+# exists = bckp.Backup
+
+# print( exists.ifDirExists( config['directory']['bckpDir'] ) ) 
+
+## bakup end ##
+
+## Emails ##
+#ctrl k ctrl c {comments}
+#ctrl k ctrl u {uncomments}
+import app.emails as send
+autoreply = config['emails']['autoreply'][1:-1]
+print(autoreply)
+#sendM = send.Email( config['emails']['title'][1:-1], config['emails']['subject'][1:-1], config['emails']['toAddress'][1:-1] , config['emails']['fromAddress'][1:-1] ,config['emails']['message'][1:-1], autoreply.encode(encoding='UTF-8',errors='strict') )
+#sendM.sendEmail()
+## Emails end ##
+
+

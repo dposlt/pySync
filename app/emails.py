@@ -8,11 +8,13 @@ from email.mime.multipart import MIMEMultipart
 
 class Email:
 
-		def __init__( self, title, subject, developEmail, fromEmail, message ):
+		def __init__( self, title, subject, developEmail, fromEmail, message, autoreply ):
 			self.subject = subject
 			self.developEmail = developEmail
 			self.fromEmail = fromEmail
 			self.message = message
+			self.title = title
+			self.autoreply = autoreply
 
 
 		def sendEmail( self ):
@@ -34,6 +36,7 @@ class Email:
 					<tr bgcolor="red"><td><center>""" + self.title + """</center></td></tr>
 					<tr bgcolor="yellow"><td><b><center> """ + self.message + """</center></b></td></tr>
 					</table>
+					<p>""" + self.autoreply + """</p>
 				</body>
 				</html>
 				"""
