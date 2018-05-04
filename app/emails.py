@@ -30,7 +30,9 @@ class Email:
 
 			html = """
 				<html>
-				<head></head>
+				<head>
+				 <meta http-equiv="Content-Type"  content="text/html charset=UTF-8" />
+				</head>
 				<body>
 					<table style="background-color: #ff0000;">
 					<tr bgcolor="red"><td><center>""" + self.title + """</center></td></tr>
